@@ -719,7 +719,10 @@ static CDVUIInAppBrowser* instance = nil;
     self.view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
-    [self.view addSubview:self.spinner];
+    
+    if (!_browserOptions.hidespinner) {
+        [self.view addSubview:self.spinner];
+    }
 }
 
 - (void) setWebViewFrame : (CGRect) frame {
